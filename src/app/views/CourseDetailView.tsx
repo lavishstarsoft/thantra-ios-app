@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { IoPlayCircle, IoDocumentTextOutline, IoStar, IoTimeOutline, IoReloadOutline } from "react-icons/io5";
-import BottomSheet from "../components/BottomSheet";
 import { getCourseDetails } from "../actions";
 
 interface CourseDetailViewProps {
@@ -9,7 +8,6 @@ interface CourseDetailViewProps {
 }
 
 export default function CourseDetailView({ courseId, onBack }: CourseDetailViewProps) {
-  const [isPurchaseOpen, setIsPurchaseOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [course, setCourse] = useState<any>(null);
 
@@ -43,7 +41,7 @@ export default function CourseDetailView({ courseId, onBack }: CourseDetailViewP
   }
 
   return (
-    <div className="flex-1 bg-white overflow-y-auto pb-[90px] ios-scrollbar mt-2 rounded-t-3xl shadow-sm z-40 relative">
+    <div className="flex-1 bg-white overflow-y-auto pb-10 ios-scrollbar mt-2 rounded-t-3xl shadow-sm z-40 relative">
       
       {/* Video Player/Header */}
       <div className="w-full aspect-video bg-black relative rounded-t-3xl overflow-hidden flex items-center justify-center">
@@ -105,66 +103,6 @@ export default function CourseDetailView({ courseId, onBack }: CourseDetailViewP
         </div>
 
       </div>
-
-      {/* Fixed Bottom Purchase Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 p-4 pb-[env(safe-area-inset-bottom,20px)] flex justify-between items-center z-50">
-        <div>
-          <p className="text-gray-500 text-xs font-medium uppercase tracking-wider mb-1">Total Price</p>
-          <p className="text-gray-900 font-bold text-2xl">{course.priceLabel || "Free"}</p>
-        </div>
-        <button 
-          onClick={() => setIsPurchaseOpen(true)}
-          className="bg-[#007aff] text-white px-8 py-3.5 rounded-full font-bold text-[16px] ios-clickable shadow-md shadow-blue-500/20"
-        >
-          {course.isFree ? "Enroll for Free" : "Buy Now"}
-        </button>
-      </div>
-
-      {/* Purchase Bottom Sheet */}
-      <BottomSheet 
-        isOpen={isPurchaseOpen} 
-        onClose={() => setIsPurchaseOpen(false)}
-        title={course.isFree ? "Confirm Enrollment" : "Confirm Purchase"}
-      >
-        <div className="pb-4">
-          <div className="flex items-center mb-6 bg-gray-50 p-4 rounded-xl">
-            {course.thumbnailUrl ? (
-               <img src={course.thumbnailUrl} className="w-14 h-14 rounded-lg mr-4 object-cover" alt="" />
-            ) : (
-               <div className="w-14 h-14 bg-purple-200 rounded-lg mr-4"></div>
-            )}
-            <div className="flex-1">
-              <h4 className="font-semibold text-gray-900 text-[15px] line-clamp-1">{course.title}</h4>
-              <p className="text-gray-500 text-[13px]">{course.accessValidityDays > 0 ? `${course.accessValidityDays} Days Access` : 'Lifetime Access'}</p>
-            </div>
-          </div>
-
-          {!course.isFree && (
-            <div className="space-y-3 mb-8">
-              <div className="flex justify-between text-[15px]">
-                <span className="text-gray-600">Subtotal</span>
-                <span className="font-medium text-gray-900">₹{(course.checkoutAmountCents / 100).toFixed(2)}</span>
-              </div>
-              <div className="h-px bg-gray-100 my-2"></div>
-              <div className="flex justify-between text-[17px] font-bold">
-                <span className="text-gray-900">Total</span>
-                <span className="text-gray-900">₹{(course.checkoutAmountCents / 100).toFixed(2)}</span>
-              </div>
-            </div>
-          )}
-
-          <button 
-            className="w-full bg-black text-white font-semibold py-4 rounded-xl ios-clickable text-[17px] flex justify-center items-center"
-            onClick={() => {
-              // Real payment integration will trigger here
-              setIsPurchaseOpen(false);
-              alert(course.isFree ? "Successfully enrolled!" : "Redirecting to Payment Gateway...");
-            }}
-          >
-            {course.isFree ? "Enroll Now" : `Pay ₹${(course.checkoutAmountCents / 100).toFixed(2)}`}
-          </button>
-        </div>
-      </BottomSheet>
 
     </div>
   );
