@@ -1,0 +1,119 @@
+/* iOS Specific Reset and Utilities */
+.ios-webview-container {
+  /* Prevent browser behaviors */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  
+  /* Smooth native-like scrolling */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+  
+  /* Ensure Apple system font */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Mobile dimensions */
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #f2f2f7; /* Standard iOS light background */
+}
+
+/* iOS Safe Area Padding */
+.safe-area-pt {
+  padding-top: env(safe-area-inset-top, 44px);
+}
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 34px);
+}
+
+/* Example iOS-style Navigation Bar */
+.ios-nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding-top: env(safe-area-inset-top);
+  box-sizing: content-box;
+}
+
+.ios-nav-title {
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -0.4px;
+}
+
+/* Example iOS-style Bottom Tab Bar */
+.ios-tab-bar {
+  position: fixed;
+  bottom: 0;
+  z-index: 50;
+  width: 100%;
+  height: 49px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ffffff;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: env(safe-area-inset-bottom);
+  box-sizing: content-box;
+}
+
+.ios-tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #8e8e93; /* Unselected iOS gray */
+  font-size: 10px;
+  gap: 2px;
+}
+
+.ios-tab-item.active {
+  color: #007aff; /* Standard iOS Blue */
+}
+
+/* Common iOS active state for taps */
+.ios-clickable:active {
+  opacity: 0.6;
+}
+
+/* Hide horizontal scrollbars on iOS-style rails */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Menu drawer slide-in */
+@keyframes iosMenuIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+.ios-menu-in { animation: iosMenuIn 0.25s cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* Native-like page transitions */
+@keyframes iosPushIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.ios-push-in { animation: iosPushIn 0.30s cubic-bezier(0.22, 1, 0.36, 1); }
+
+@keyframes iosModalIn {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.ios-modal-in { animation: iosModalIn 0.32s cubic-bezier(0.22, 1, 0.36, 1); }
+
+@keyframes iosFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.ios-fade-in { animation: iosFadeIn 0.26s ease-out; }
