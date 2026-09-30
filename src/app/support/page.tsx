@@ -25,8 +25,8 @@ export default function SupportPage() {
       <p style={{ color: "#6b7280", marginTop: 0 }}>Thantra Astro — Learn Astrology</p>
 
       <p>
-        Need help with the Thantra Astro app? We are happy to assist you with sign-in, lessons,
-        playback, or account questions.
+        Need help with the Thantra Astro app? We are happy to assist you with lessons, playback, or
+        any questions. All lessons in the app are free to watch.
       </p>
 
       <h2 style={h2}>Contact Us</h2>
@@ -38,22 +38,16 @@ export default function SupportPage() {
       <h2 style={h2}>Common Help</h2>
       <ul>
         <li>
-          <strong>Sign in:</strong> Enter your mobile number and the OTP sent to it to access your
-          lessons.
-        </li>
-        <li>
-          <strong>Continue watching:</strong> After signing in, your video progress is saved so you
-          can resume where you left off.
+          <strong>Watch lessons:</strong> All lessons are free. Just open the app and start watching —
+          no login or payment required.
         </li>
         <li>
           <strong>Video not playing:</strong> Please check your internet connection and try again.
         </li>
+        <li>
+          <strong>New lessons:</strong> We add new astrology lessons regularly, so check back often.
+        </li>
       </ul>
-
-      <h2 style={h2}>Account Deletion</h2>
-      <p>
-        To request deletion of your account and associated data, contact us at the phone number above.
-      </p>
 
       <h2 style={h2}>Privacy</h2>
       <p>

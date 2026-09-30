@@ -26,74 +26,48 @@ export default function PrivacyPolicyPage() {
 
       <p>
         Thantra Astro (&quot;we&quot;, &quot;our&quot;, or &quot;the app&quot;) respects your privacy.
-        This Privacy Policy explains what information we collect, how we use it, and the choices you
-        have. By using the Thantra Astro app you agree to this policy.
+        The app is free to use and lets you watch astrology lessons without creating an account or
+        signing in. This Privacy Policy explains our practices.
       </p>
 
       <h2 style={h2}>Information We Collect</h2>
-      <ul>
-        <li>
-          <strong>Mobile number:</strong> When you sign in, we collect your mobile number to send a
-          one-time password (OTP) and to create and secure your account.
-        </li>
-        <li>
-          <strong>Name and email (optional):</strong> If you register, we may collect your name and
-          email address to personalise your account.
-        </li>
-        <li>
-          <strong>Learning activity:</strong> We store which lessons you watch and your video progress
-          so you can continue watching where you left off.
-        </li>
-        <li>
-          <strong>Basic device information:</strong> A device identifier may be used to keep your
-          session secure and signed in.
-        </li>
-      </ul>
+      <p>
+        Thantra Astro does <strong>not require you to log in</strong> and does{" "}
+        <strong>not ask you for personal information</strong> such as your name, phone number, or
+        email to watch lessons. We do not collect or store personal data that identifies you.
+      </p>
+      <p>
+        Like most apps and websites, standard, non-identifying technical data (such as basic device
+        or network information) may be processed by our hosting and content-delivery providers purely
+        to load and display the lessons reliably.
+      </p>
 
-      <h2 style={h2}>How We Use Your Information</h2>
+      <h2 style={h2}>How Information Is Used</h2>
       <ul>
-        <li>To create your account and sign you in securely.</li>
-        <li>To show your enrolled lessons and &quot;continue watching&quot; progress.</li>
+        <li>To load and display astrology video lessons in the app.</li>
         <li>To operate, maintain, and improve the app.</li>
-        <li>To respond to your support requests.</li>
       </ul>
 
       <h2 style={h2}>Information Sharing</h2>
       <p>
-        We do not sell your personal information. We only share information with service providers
-        that help us run the app (for example, secure hosting and SMS/OTP delivery), and only as
-        needed to provide the service, or when required by law.
+        We do not sell any information. We only rely on service providers (such as secure hosting and
+        content delivery) needed to run the app, or as required by law.
       </p>
 
       <h2 style={h2}>Data Security</h2>
       <p>
-        We use reasonable technical and organisational measures to protect your information. However,
-        no method of transmission or storage is completely secure.
+        We use reasonable technical measures to keep the app secure. However, no method of
+        transmission or storage over the internet is completely secure.
       </p>
-
-      <h2 style={h2}>Data Retention</h2>
-      <p>
-        We keep your information for as long as your account is active or as needed to provide the
-        service. You may request deletion of your account and associated data at any time.
-      </p>
-
-      <h2 style={h2}>Your Choices</h2>
-      <ul>
-        <li>You can request access to, correction of, or deletion of your personal data.</li>
-        <li>You can stop using the app and request that your account be removed.</li>
-      </ul>
 
       <h2 style={h2}>Children&apos;s Privacy</h2>
       <p>
         The app is intended for a general audience and is not directed to children under 13. We do
-        not knowingly collect personal information from children under 13.
+        not knowingly collect personal information from children.
       </p>
 
       <h2 style={h2}>Contact Us</h2>
-      <p>
-        If you have any questions about this Privacy Policy or wish to request data deletion, please
-        contact us:
-      </p>
+      <p>If you have any questions about this Privacy Policy, please contact us:</p>
       <ul>
         <li>Phone / WhatsApp: 8639870841</li>
         <li>App: Thantra Astro (Learn Astrology)</li>
