@@ -43,9 +43,10 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
-  /* No safe-area padding here: the Flutter WebView's SafeArea already provides
-     the top inset. Adding env(safe-area-inset-top) too caused double spacing. */
-  box-sizing: border-box;
+  /* WebView now draws edge-to-edge (no Flutter SafeArea), so the nav bar itself
+     handles the status-bar/notch inset here — single, correct top spacing. */
+  padding-top: env(safe-area-inset-top);
+  box-sizing: content-box;
 }
 
 .ios-nav-title {
